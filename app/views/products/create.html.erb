@@ -1,2 +1,9 @@
-<h1>Products#create</h1>
-<p>Find me in app/views/products/create.html.erb</p>
+<p>Your item has been added to your products list:</p>
+
+<% @products.each do |x| %>
+		<p>
+			<%= x.name %><br>
+			$<%= x.price %>
+			Expires: <%= x.expires_on %>
+		</p>
+	<% end %>

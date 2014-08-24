@@ -1,0 +1,13 @@
+<h1>Product Form</h1>
+
+<%= form_for @product, url: {action: "create"} do |f| %>
+<p>Product Name:<br>
+  <%= f.text_field :name %></p>
+  <p>Product Description:<br>
+  <%= f.text_field :description %></p>
+<p>Price:<br>
+  <%= f.number_field :price, :step => 0.01 %></p>
+<p>Expiration Date:<br>
+  <%= f.date_field :expires_on %></p>
+  <%= f.submit "Add Product" %>
+<% end %>

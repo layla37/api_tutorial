@@ -9,6 +9,12 @@ class ProductsController < ApplicationController
 		@product.save
 		@products = Product.all	
 	end
+
+	def list_json
+		product_list = Product.all
+        render json: product_list
+	end
+
 private
 	def product_params
 		params.require(:product).permit(:name, :description, :price, :expires_on)

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  
+	var myCallback = function(product_list){
+		// for (var k in product_list){
+		// 	console.log(k);
+		// 	console.log(product_list[k]);
+		// }		
+		for (var i = 0; i < product_list.length; i++){
+			var p = $("#products"); 
+			p.html(p.html() + "<br>" + (product_list[i].name));
+		}
+	} 
+
+	$.get("products/list_json", myCallback);
+
+});
+</script>
+</head>
+<body>
+
+<div id="products">
+
+</div>
+
+</body>
+</html>

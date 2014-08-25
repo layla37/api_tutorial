@@ -9,10 +9,15 @@ $(document).ready(function(){
 		// for (var k in product_list){
 		// 	console.log(k);
 		// 	console.log(product_list[k]);
-		// }		
-		for (var i = 0; i < product_list.length; i++){
-			var p = $("#products"); 
-			p.html(p.html() + "<br>" + (product_list[i].name));
+		// }	
+
+		//get the products div
+		var p = $("#products"); 
+
+		for (var i = 0; i < product_list.length; i++){			
+			newDiv = $("<div></div>");
+			newDiv.html(product_list[i].name);
+			p.append(newDiv);
 		}
 	} 
 
@@ -26,6 +31,7 @@ $(document).ready(function(){
 <div id="products">
 
 </div>
+
 
 </body>
 </html>
